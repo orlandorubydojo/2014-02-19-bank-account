@@ -9,6 +9,7 @@ This is the gist of it...
 ```ruby
 # Let's create an instance of our object
 ba = BankAccount.new(500)
+=> #<BankAccount:0x007fb740be4818>
 
 # We can add funds
 ba.add_funds(100)
@@ -51,3 +52,5 @@ x < 15
 x.cents
 => 1000
 ```
+
+The RSpec cheat sheet used can be found [here](http://www.anchor.com.au/blog/2013/03/updated-rspec-cheatsheet/).
