@@ -1,6 +1,3 @@
-2014-02-19-bank-account
-=======================
-
 ### Bank Account Dojo - 2014/02/19
 The goal of this Dojo is to create a BankAccount class that we can perform expected actions on.
 
