@@ -16,4 +16,15 @@ class BankAccount
     @balance -= amount.to_money
     amount.to_money
   end
+
+  def add_interest(months)
+  end
+
+  def calculate_interest(months)
+  end
+
+  # THINK: What does the 'self.' here mean?
+  def self.transfer(from_account, to_account, amount)
+  end
+
 end

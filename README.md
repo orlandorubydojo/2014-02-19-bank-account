@@ -57,12 +57,11 @@ ba = BankAccount.new(500, 0.02) # 2% interest
 
 ### Add interest for a specified number of months
 ```ruby
-# calculate_interest(months)
-ba.add_interest(1)
-=> #<Money fractional:1000 currency:USD> # $10
+ba.calculate_interest(months)
+=> #<Money fractional:1000 currency:USD> # returns the interest earned, $10
 
-ba.balance
-=> #<Money fractional:51000 currency:USD> # $510
+ba.add_interest(1)
+=> #<Money fractional:51000 currency:USD> # returns the balance, $510
 ```
 
 ### Transfer funds between two bank accounts
