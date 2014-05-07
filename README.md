@@ -68,10 +68,11 @@ ba.add_interest(1)
 
 ### Transfer funds between two bank accounts
 ```ruby
+# Initialize the other bank account
 ba2 = BankAccount.new(100, 0.01)
 
 # BankAccount.transfer(from_account, to_account, amount)
-BankAccount.transfer(ba, ba2, Money.new(100))
+BankAccount.transfer(ba, ba2, Money.new(100)) # transfer $100 from account ba to account ba2
 => true
 
 ba.balance
