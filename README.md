@@ -47,20 +47,25 @@ x.cents
 ```
 
 ## Expected Usage
+
+### Initialize an account with interest
 ```ruby
-# Initialize an account with interest
 # BankAccount.new(initial_amount, interest)
 ba = BankAccount.new(500, 0.02) # 2% interest
 => #<BankAccount:0x007fb740be4818>
+```
 
-# Add interest for a specified number of months
+### Add interest for a specified number of months
+```ruby
 # calculate_interest(months)
 ba.add_interest(1)
 => #<Money fractional:1000 currency:USD> # $10
 ba.balance
 => #<Money fractional:51000 currency:USD> # $510
+```
 
-# Transfer funds between two bank accounts
+### Transfer funds between two bank accounts
+```ruby
 ba2 = BankAccount.new(100, 0.01)
 # BankAccount.transfer(from_account, to_account, amount)
 BankAccount.transfer(ba, ba2, Money.new(100))
