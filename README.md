@@ -60,6 +60,7 @@ ba = BankAccount.new(500, 0.02) # 2% interest
 # calculate_interest(months)
 ba.add_interest(1)
 => #<Money fractional:1000 currency:USD> # $10
+
 ba.balance
 => #<Money fractional:51000 currency:USD> # $510
 ```
@@ -67,11 +68,14 @@ ba.balance
 ### Transfer funds between two bank accounts
 ```ruby
 ba2 = BankAccount.new(100, 0.01)
+
 # BankAccount.transfer(from_account, to_account, amount)
 BankAccount.transfer(ba, ba2, Money.new(100))
 => true
+
 ba.balance
 => #<Money fractional:41000 currency:USD> # $410
+
 ba2.balance
 => #<Money fractional:20000 currency:USD> # $200
 ```
