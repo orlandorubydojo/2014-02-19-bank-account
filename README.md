@@ -1,5 +1,5 @@
 # Bank Account
-This is the second time visiting this Dojo. The first time we implemented a basic bank account, with the ability to create an account, add funds, and remove funds.
+This is the second time visiting this Dojo. The first time we implemented a basic bank account, with the ability to create an account, add funds, and remove funds. The original README can be found in the file 2014-02-19-README.md.
 
 This time around, we are going to add a few more key features of bank accounts:
 
