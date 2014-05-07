@@ -1,37 +1,32 @@
-# Bank Account Dojo - 2014/02/19
+# Bank Account
+This is the second time visiting this Dojo. The first time we implemented a basic bank account, with the ability to create an account, add funds, and remove funds.
 
-The goal of this Dojo is to create a BankAccount class that we can perform expected actions on.
+This time around, we are going to add a few more key features of bank accounts:
 
-## Expected Usage
-This is the gist of it...
+- Compound interest
+- Transfers between accounts
+
+
+## Existing Usage
 ```ruby
-# Let's create an instance of our object
+# Let's create an instance of our object with $500
 ba = BankAccount.new(500)
 => #<BankAccount:0x007fb740be4818>
 
-# We can add funds
+# We can add funds, let's add $100
 ba.add_funds(100)
 => #<BankAccount:0x007fb740be4818>
 
 # Great, now let's check out balance
 ba.balance
-=> #<Money fractional:60000 currency:USD>
+=> #<Money fractional:60000 currency:USD> # $600
 
-# We can also take money out
+# We can also take money out, let's remove $50
 ba.withdraw(50)
 => #<Money fractional:5000 currency:USD>
-
-# Calculate interest
-# Formula
-# future_value = present_value * ((1 + interest_rate) ^ number_of_periods)
-ba.calculate_interest(12, 0.03)
-=> #<Money fractional:78400 currency:USD>
 ```
 
-We can assume our bank account will use a [simplified method](http://en.wikipedia.org/wiki/Compound_interest#Simplified_calculation) of calculating interest.
-
-
-Money gem usage
+### Notes On Using The Money Gem
 ```ruby
 # Turns the number 10 into $10
 x = 10.to_money
@@ -51,4 +46,35 @@ x.cents
 => 1000
 ```
 
-The RSpec cheat sheet used can be found [here](http://www.anchor.com.au/blog/2013/03/updated-rspec-cheatsheet/).
+## Expected Usage
+```ruby
+# Initialize an account with interest
+# BankAccount.new(initial_amount, interest)
+ba = BankAccount.new(500, 0.02) # 2% interest
+=> #<BankAccount:0x007fb740be4818>
+
+# Add interest for a specified number of months
+# calculate_interest(months)
+ba.add_interest(1)
+=> #<Money fractional:1000 currency:USD> # $10
+ba.balance
+=> #<Money fractional:51000 currency:USD> # $510
+
+# Transfer funds between two bank accounts
+ba2 = BankAccount.new(100, 0.01)
+# BankAccount.transfer(from_account, to_account, amount)
+BankAccount.transfer(ba, ba2, Money.new(100))
+=> true
+ba.balance
+=> #<Money fractional:41000 currency:USD> # $410
+ba2.balance
+=> #<Money fractional:20000 currency:USD> # $200
+```
+
+
+## Additional Resources
+
+- [RSpec cheat sheet](http://www.anchor.com.au/blog/2013/03/updated-rspec-cheatsheet/)
+- [Calculating compound interest](http://en.wikipedia.org/wiki/Compound_interest#Simplified_calculation)
+- [Ruby Money Gem](https://github.com/RubyMoney/money)
+

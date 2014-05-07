@@ -31,7 +31,7 @@ describe BankAccount do
   end
 
   it 'should withdraw funds' do
-    @ba.withdraw(50)
+    expect(@ba.withdraw(50)).to eq(50)
     expect(@ba.balance).to eq(450)
   end
 
