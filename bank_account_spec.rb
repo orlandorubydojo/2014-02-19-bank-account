@@ -38,7 +38,7 @@ describe BankAccount do
   end
 
   it "should transfer money between two accounts" do
-    pending
+    pending "Implementing this is left as at-home exercise"
     ba1 = BankAccount.new(1000, 0.04)
     ba2 = BankAccount.new(500, 0.04)
     BankAccount.trasfer(ba1, ba2, 200)
